@@ -24,17 +24,18 @@ class OrganizationsServersSitesNginxUpdateRequest extends Request implements Has
      * @param  string  $organization  The organization slug
      * @param  int  $server  The server ID
      * @param  int  $site  The site ID
+     * @param  string  $nginxConfig  The Nginx configuration
      */
     public function __construct(
         protected string $organization,
         protected int $server,
         protected int $site,
-        protected string $config,
+        protected string $nginxConfig,
     ) {}
 
     public function defaultBody(): array
     {
-        return array_filter(['config' => $this->config]);
+        return array_filter(['config' => $this->nginxConfig]);
     }
 
     public function resolveEndpoint(): string

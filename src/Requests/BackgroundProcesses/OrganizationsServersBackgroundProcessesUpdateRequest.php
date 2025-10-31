@@ -26,19 +26,19 @@ class OrganizationsServersBackgroundProcessesUpdateRequest extends Request imple
      * @param  int  $server  The server ID
      * @param  int  $backgroundProcess  The background process ID
      * @param  string  $name  The name of the background process.
-     * @param  null|string  $config  The supervisor configuration of the background process.
+     * @param  null|string  $supervisorConfig  The supervisor configuration of the background process.
      */
     public function __construct(
         protected string $organization,
         protected int $server,
         protected int $backgroundProcess,
         protected string $name,
-        protected ?string $config = null,
+        protected ?string $supervisorConfig = null,
     ) {}
 
     public function defaultBody(): array
     {
-        return array_filter(['name' => $this->name, 'config' => $this->config]);
+        return array_filter(['name' => $this->name, 'config' => $this->supervisorConfig]);
     }
 
     public function resolveEndpoint(): string

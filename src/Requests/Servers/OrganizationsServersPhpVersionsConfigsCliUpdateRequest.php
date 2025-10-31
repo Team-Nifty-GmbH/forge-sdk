@@ -24,17 +24,18 @@ class OrganizationsServersPhpVersionsConfigsCliUpdateRequest extends Request imp
      * @param  string  $organization  The organization slug
      * @param  int  $server  The server ID
      * @param  int  $phpVersion  The php version ID
+     * @param  string  $phpConfig  The PHP CLI configuration
      */
     public function __construct(
         protected string $organization,
         protected int $server,
         protected int $phpVersion,
-        protected string $config,
+        protected string $phpConfig,
     ) {}
 
     public function defaultBody(): array
     {
-        return array_filter(['config' => $this->config]);
+        return array_filter(['config' => $this->phpConfig]);
     }
 
     public function resolveEndpoint(): string

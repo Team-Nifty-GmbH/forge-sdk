@@ -23,9 +23,9 @@ class OrganizationsServersScheduledJobsStoreRequest extends Request implements H
     /**
      * @param  string  $organization  The organization slug
      * @param  int  $server  The server ID
-     * @param  null|mixed  $name  The name of the command.
      * @param  string  $command  The command to run.
      * @param  string  $user  The user to run the scheduled job as.
+     * @param  null|mixed  $name  The name of the command.
      * @param  null|mixed  $cron  The cron expression to use for the scheduled job. Only used if frequency is set to Custom.
      * @param  null|mixed  $heartbeat  Whether a heartbeat should be created for the scheduled job.
      * @param  null|string  $gracePeriod  The grace period, in minutes, for the heartbeat.
@@ -33,9 +33,9 @@ class OrganizationsServersScheduledJobsStoreRequest extends Request implements H
     public function __construct(
         protected string $organization,
         protected int $server,
-        protected mixed $name = null,
         protected string $command,
         protected string $user,
+        protected mixed $name = null,
         protected mixed $cron = null,
         protected mixed $heartbeat = null,
         protected ?string $gracePeriod = null,

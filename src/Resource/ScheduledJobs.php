@@ -97,13 +97,13 @@ class ScheduledJobs extends BaseResource
     public function organizationsServersScheduledJobsStoreRequest(
         string $organization,
         int $server,
-        mixed $name = null,
         string $command,
         string $user,
+        mixed $name = null,
         mixed $cron = null,
         mixed $heartbeat = null,
         ?string $gracePeriod = null,
     ): Response {
-        return $this->connector->send(new OrganizationsServersScheduledJobsStoreRequest($organization, $server, $name, $command, $user, $cron, $heartbeat, $gracePeriod));
+        return $this->connector->send(new OrganizationsServersScheduledJobsStoreRequest($organization, $server, $command, $user, $name, $cron, $heartbeat, $gracePeriod));
     }
 }

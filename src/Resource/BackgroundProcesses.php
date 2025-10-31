@@ -111,13 +111,13 @@ class BackgroundProcesses extends BaseResource
         string $name,
         string $command,
         CreateBackgroundProcessRequestUser $user,
-        mixed $directory = null,
         int $processes,
+        mixed $directory = null,
         ?int $startsecs = null,
         ?int $stopwaitsecs = null,
         mixed $stopsignal = null,
     ): Response {
-        return $this->connector->send(new OrganizationsServersBackgroundProcessesStoreRequest($organization, $server, $name, $command, $user, $directory, $processes, $startsecs, $stopwaitsecs, $stopsignal));
+        return $this->connector->send(new OrganizationsServersBackgroundProcessesStoreRequest($organization, $server, $name, $command, $user, $processes, $directory, $startsecs, $stopwaitsecs, $stopsignal));
     }
 
     /**

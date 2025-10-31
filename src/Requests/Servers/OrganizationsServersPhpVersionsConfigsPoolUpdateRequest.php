@@ -24,18 +24,20 @@ class OrganizationsServersPhpVersionsConfigsPoolUpdateRequest extends Request im
      * @param  string  $organization  The organization slug
      * @param  int  $server  The server ID
      * @param  int  $phpVersion  The php version ID
+     * @param  string  $phpConfig  The PHP pool configuration
+     * @param  mixed  $user  The user for the pool
      */
     public function __construct(
         protected string $organization,
         protected int $server,
         protected int $phpVersion,
-        protected string $config,
+        protected string $phpConfig,
         protected mixed $user = null,
     ) {}
 
     public function defaultBody(): array
     {
-        return array_filter(['config' => $this->config, 'user' => $this->user]);
+        return array_filter(['config' => $this->phpConfig, 'user' => $this->user]);
     }
 
     public function resolveEndpoint(): string

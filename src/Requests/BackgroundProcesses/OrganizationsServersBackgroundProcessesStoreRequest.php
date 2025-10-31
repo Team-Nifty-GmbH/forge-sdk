@@ -27,8 +27,8 @@ class OrganizationsServersBackgroundProcessesStoreRequest extends Request implem
      * @param  string  $name  The name of the background process.
      * @param  string  $command  The command to run.
      * @param  CreateBackgroundProcessRequestUser  $user  The user to run the background process as.
-     * @param  null|mixed  $directory  The directory to run the background process from.
      * @param  int  $processes  The number of processes to run.
+     * @param  null|mixed  $directory  The directory to run the background process from.
      * @param  null|int  $startsecs  The number of seconds to wait before starting the process.
      * @param  null|int  $stopwaitsecs  The number of seconds to wait before stopping the process.
      * @param  null|mixed  $stopsignal  The signal to send to stop the process.
@@ -39,8 +39,8 @@ class OrganizationsServersBackgroundProcessesStoreRequest extends Request implem
         protected string $name,
         protected string $command,
         protected CreateBackgroundProcessRequestUser $user,
-        protected mixed $directory = null,
         protected int $processes,
+        protected mixed $directory = null,
         protected ?int $startsecs = null,
         protected ?int $stopwaitsecs = null,
         protected mixed $stopsignal = null,

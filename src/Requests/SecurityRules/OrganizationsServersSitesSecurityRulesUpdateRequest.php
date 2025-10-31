@@ -26,8 +26,8 @@ class OrganizationsServersSitesSecurityRulesUpdateRequest extends Request implem
      * @param  int  $site  The site ID
      * @param  int  $securityRule  The security rule ID
      * @param  string  $name  The name of the security rule.
-     * @param  null|mixed  $path  The path for the security rule.
      * @param  array  $credentials  The credentials for the security rule.
+     * @param  null|mixed  $path  The path for the security rule.
      */
     public function __construct(
         protected string $organization,
@@ -35,8 +35,8 @@ class OrganizationsServersSitesSecurityRulesUpdateRequest extends Request implem
         protected int $site,
         protected int $securityRule,
         protected string $name,
-        protected mixed $path = null,
         protected array $credentials,
+        protected mixed $path = null,
     ) {}
 
     public function defaultBody(): array

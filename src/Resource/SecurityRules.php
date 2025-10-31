@@ -116,9 +116,9 @@ class SecurityRules extends BaseResource
         int $site,
         int $securityRule,
         string $name,
-        mixed $path = null,
         array $credentials,
+        mixed $path = null,
     ): Response {
-        return $this->connector->send(new OrganizationsServersSitesSecurityRulesUpdateRequest($organization, $server, $site, $securityRule, $name, $path, $credentials));
+        return $this->connector->send(new OrganizationsServersSitesSecurityRulesUpdateRequest($organization, $server, $site, $securityRule, $name, $credentials, $path));
     }
 }
