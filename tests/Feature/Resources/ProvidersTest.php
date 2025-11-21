@@ -1,11 +1,11 @@
 <?php
 
-use TeamNifty\Forge\Resource\Providers;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 use TeamNifty\Forge\Forge;
+use TeamNifty\Forge\Resource\Providers;
 
-it('can call providersIndexRequest method', function () {
+it('can call providersIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -20,7 +20,7 @@ it('can call providersIndexRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call providersRegionsIndexRequest method', function () {
+it('can call providersRegionsIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -35,7 +35,7 @@ it('can call providersRegionsIndexRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call providersRegionsShowRequest method', function () {
+it('can call providersRegionsShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -50,7 +50,7 @@ it('can call providersRegionsShowRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call providersRegionsSizesIndexRequest method', function () {
+it('can call providersRegionsSizesIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -65,7 +65,7 @@ it('can call providersRegionsSizesIndexRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call providersRegionsSizesShowRequest method', function () {
+it('can call providersRegionsSizesShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -80,7 +80,7 @@ it('can call providersRegionsSizesShowRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call providersShowRequest method', function () {
+it('can call providersShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -95,7 +95,7 @@ it('can call providersShowRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call providersSizesIndexRequest method', function () {
+it('can call providersSizesIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -110,7 +110,7 @@ it('can call providersSizesIndexRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call providersSizesShowRequest method', function () {
+it('can call providersSizesShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);

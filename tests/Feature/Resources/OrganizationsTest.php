@@ -1,11 +1,11 @@
 <?php
 
-use TeamNifty\Forge\Resource\Organizations;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 use TeamNifty\Forge\Forge;
+use TeamNifty\Forge\Resource\Organizations;
 
-it('can call organizationsIndexRequest method', function () {
+it('can call organizationsIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -20,7 +20,7 @@ it('can call organizationsIndexRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServerCredentialsIndexRequest method', function () {
+it('can call organizationsServerCredentialsIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -35,7 +35,7 @@ it('can call organizationsServerCredentialsIndexRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServerCredentialsShowRequest method', function () {
+it('can call organizationsServerCredentialsShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -50,7 +50,7 @@ it('can call organizationsServerCredentialsShowRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServerCredentialsVpcsIndexRequest method', function () {
+it('can call organizationsServerCredentialsVpcsIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -65,7 +65,7 @@ it('can call organizationsServerCredentialsVpcsIndexRequest method', function ()
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServerCredentialsVpcsShowRequest method', function () {
+it('can call organizationsServerCredentialsVpcsShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -80,7 +80,7 @@ it('can call organizationsServerCredentialsVpcsShowRequest method', function () 
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServerCredentialsVpcsStoreRequest method', function () {
+it('can call organizationsServerCredentialsVpcsStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -95,7 +95,7 @@ it('can call organizationsServerCredentialsVpcsStoreRequest method', function ()
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsShowRequest method', function () {
+it('can call organizationsShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);

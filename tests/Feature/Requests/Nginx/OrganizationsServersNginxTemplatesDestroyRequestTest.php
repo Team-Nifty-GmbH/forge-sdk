@@ -1,21 +1,21 @@
 <?php
 
-use TeamNifty\Forge\Requests\Nginx\OrganizationsServersNginxTemplatesDestroyRequest;
 use Saloon\Enums\Method;
+use TeamNifty\Forge\Requests\Nginx\OrganizationsServersNginxTemplatesDestroyRequest;
 
-it('can be instantiated', function () {
+it('can be instantiated', function (): void {
     $request = new OrganizationsServersNginxTemplatesDestroyRequest(organization: 'test-value', server: 1, nginxTemplate: 1);
 
     expect($request)->toBeInstanceOf(OrganizationsServersNginxTemplatesDestroyRequest::class);
 });
 
-it('has correct HTTP method', function () {
+it('has correct HTTP method', function (): void {
     $request = new OrganizationsServersNginxTemplatesDestroyRequest(organization: 'test-value', server: 1, nginxTemplate: 1);
 
     expect($request->getMethod())->toBe(Method::DELETE);
 });
 
-it('resolves endpoint correctly', function () {
+it('resolves endpoint correctly', function (): void {
     $request = new OrganizationsServersNginxTemplatesDestroyRequest(organization: 'test-value', server: 1, nginxTemplate: 1);
 
     expect($request->resolveEndpoint())->toBeString();

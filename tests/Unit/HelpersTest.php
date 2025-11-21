@@ -2,20 +2,20 @@
 
 use TeamNifty\Forge\Forge;
 
-it('forge helper accepts custom token', function () {
+it('forge helper accepts custom token', function (): void {
     $forge = forge('custom-token');
 
     expect($forge)->toBeInstanceOf(Forge::class);
 });
 
-it('forge helper returns different instances when different tokens provided', function () {
+it('forge helper returns different instances when different tokens provided', function (): void {
     $forge1 = forge('token-1');
     $forge2 = forge('token-2');
 
     expect($forge1)->not->toBe($forge2);
 });
 
-it('forge helper resolves from container when no token provided', function () {
+it('forge helper resolves from container when no token provided', function (): void {
     app()->singleton(Forge::class, function () {
         return new Forge(bearerToken: 'container-token');
     });

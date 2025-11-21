@@ -1,11 +1,11 @@
 <?php
 
-use TeamNifty\Forge\Resource\SecurityRules;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 use TeamNifty\Forge\Forge;
+use TeamNifty\Forge\Resource\SecurityRules;
 
-it('can call organizationsServersSitesSecurityRulesDestroyRequest method', function () {
+it('can call organizationsServersSitesSecurityRulesDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -20,7 +20,7 @@ it('can call organizationsServersSitesSecurityRulesDestroyRequest method', funct
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesSecurityRulesIndexRequest method', function () {
+it('can call organizationsServersSitesSecurityRulesIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -35,7 +35,7 @@ it('can call organizationsServersSitesSecurityRulesIndexRequest method', functio
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesSecurityRulesShowRequest method', function () {
+it('can call organizationsServersSitesSecurityRulesShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -50,7 +50,7 @@ it('can call organizationsServersSitesSecurityRulesShowRequest method', function
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesSecurityRulesStoreRequest method', function () {
+it('can call organizationsServersSitesSecurityRulesStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -65,7 +65,7 @@ it('can call organizationsServersSitesSecurityRulesStoreRequest method', functio
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesSecurityRulesUpdateRequest method', function () {
+it('can call organizationsServersSitesSecurityRulesUpdateRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -74,7 +74,7 @@ it('can call organizationsServersSitesSecurityRulesUpdateRequest method', functi
     $forge->withMockClient($mockClient);
 
     $resource = new SecurityRules($forge);
-    $response = $resource->organizationsServersSitesSecurityRulesUpdateRequest('test-value', 1, 1, 1, 'test-value', ['test' => 'value'], NULL);
+    $response = $resource->organizationsServersSitesSecurityRulesUpdateRequest('test-value', 1, 1, 1, 'test-value', ['test' => 'value'], null);
 
     expect($response)->toBeObject();
     $mockClient->assertSentCount(1);

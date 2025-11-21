@@ -1,12 +1,12 @@
 <?php
 
-use TeamNifty\Forge\Resource\Servers;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
-use TeamNifty\Forge\Forge;
 use TeamNifty\Forge\Enums\UpdatePhpCliVersionRequestPhpVersion;
+use TeamNifty\Forge\Forge;
+use TeamNifty\Forge\Resource\Servers;
 
-it('can call organizationsServersActionsStoreRequest method', function () {
+it('can call organizationsServersActionsStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -21,7 +21,7 @@ it('can call organizationsServersActionsStoreRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersArchivesDestroyRequest method', function () {
+it('can call organizationsServersArchivesDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -36,7 +36,7 @@ it('can call organizationsServersArchivesDestroyRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersArchivesIndexRequest method', function () {
+it('can call organizationsServersArchivesIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -51,7 +51,7 @@ it('can call organizationsServersArchivesIndexRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersArchivesStoreRequest method', function () {
+it('can call organizationsServersArchivesStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -66,7 +66,7 @@ it('can call organizationsServersArchivesStoreRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersBackgroundProcessesActionsStoreRequest method', function () {
+it('can call organizationsServersBackgroundProcessesActionsStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -81,7 +81,7 @@ it('can call organizationsServersBackgroundProcessesActionsStoreRequest method',
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersDestroyRequest method', function () {
+it('can call organizationsServersDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -96,7 +96,7 @@ it('can call organizationsServersDestroyRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersEventsIndexRequest method', function () {
+it('can call organizationsServersEventsIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -111,7 +111,7 @@ it('can call organizationsServersEventsIndexRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersEventsOutputShowRequest method', function () {
+it('can call organizationsServersEventsOutputShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -126,7 +126,7 @@ it('can call organizationsServersEventsOutputShowRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersEventsShowRequest method', function () {
+it('can call organizationsServersEventsShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -141,7 +141,7 @@ it('can call organizationsServersEventsShowRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersIndexRequest method', function () {
+it('can call organizationsServersIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -156,7 +156,7 @@ it('can call organizationsServersIndexRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersPhpCliVersionShowRequest method', function () {
+it('can call organizationsServersPhpCliVersionShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -171,7 +171,7 @@ it('can call organizationsServersPhpCliVersionShowRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersPhpCliVersionUpdateRequest method', function () {
+it('can call organizationsServersPhpCliVersionUpdateRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -180,13 +180,13 @@ it('can call organizationsServersPhpCliVersionUpdateRequest method', function ()
     $forge->withMockClient($mockClient);
 
     $resource = new Servers($forge);
-    $response = $resource->organizationsServersPhpCliVersionUpdateRequest('test-value', 1, TeamNifty\Forge\Enums\UpdatePhpCliVersionRequestPhpVersion::cases()[0]);
+    $response = $resource->organizationsServersPhpCliVersionUpdateRequest('test-value', 1, UpdatePhpCliVersionRequestPhpVersion::cases()[0]);
 
     expect($response)->toBeObject();
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersPhpMaxExecutionTimeShowRequest method', function () {
+it('can call organizationsServersPhpMaxExecutionTimeShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -201,7 +201,7 @@ it('can call organizationsServersPhpMaxExecutionTimeShowRequest method', functio
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersPhpMaxExecutionTimeUpdateRequest method', function () {
+it('can call organizationsServersPhpMaxExecutionTimeUpdateRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -210,13 +210,13 @@ it('can call organizationsServersPhpMaxExecutionTimeUpdateRequest method', funct
     $forge->withMockClient($mockClient);
 
     $resource = new Servers($forge);
-    $response = $resource->organizationsServersPhpMaxExecutionTimeUpdateRequest('test-value', 1, NULL, NULL, NULL);
+    $response = $resource->organizationsServersPhpMaxExecutionTimeUpdateRequest('test-value', 1, null, null, null);
 
     expect($response)->toBeObject();
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersPhpMaxUploadSizeShowRequest method', function () {
+it('can call organizationsServersPhpMaxUploadSizeShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -231,7 +231,7 @@ it('can call organizationsServersPhpMaxUploadSizeShowRequest method', function (
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersPhpMaxUploadSizeUpdateRequest method', function () {
+it('can call organizationsServersPhpMaxUploadSizeUpdateRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -240,13 +240,13 @@ it('can call organizationsServersPhpMaxUploadSizeUpdateRequest method', function
     $forge->withMockClient($mockClient);
 
     $resource = new Servers($forge);
-    $response = $resource->organizationsServersPhpMaxUploadSizeUpdateRequest('test-value', 1, NULL, NULL, NULL);
+    $response = $resource->organizationsServersPhpMaxUploadSizeUpdateRequest('test-value', 1, null, null, null);
 
     expect($response)->toBeObject();
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersPhpOpcacheDestroyRequest method', function () {
+it('can call organizationsServersPhpOpcacheDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -261,7 +261,7 @@ it('can call organizationsServersPhpOpcacheDestroyRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersPhpOpcacheShowRequest method', function () {
+it('can call organizationsServersPhpOpcacheShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -276,7 +276,7 @@ it('can call organizationsServersPhpOpcacheShowRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersPhpOpcacheStoreRequest method', function () {
+it('can call organizationsServersPhpOpcacheStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -291,7 +291,7 @@ it('can call organizationsServersPhpOpcacheStoreRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersPhpSiteVersionShowRequest method', function () {
+it('can call organizationsServersPhpSiteVersionShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -306,7 +306,7 @@ it('can call organizationsServersPhpSiteVersionShowRequest method', function () 
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersPhpSiteVersionUpdateRequest method', function () {
+it('can call organizationsServersPhpSiteVersionUpdateRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -315,13 +315,13 @@ it('can call organizationsServersPhpSiteVersionUpdateRequest method', function (
     $forge->withMockClient($mockClient);
 
     $resource = new Servers($forge);
-    $response = $resource->organizationsServersPhpSiteVersionUpdateRequest('test-value', 1, TeamNifty\Forge\Enums\UpdatePhpCliVersionRequestPhpVersion::cases()[0]);
+    $response = $resource->organizationsServersPhpSiteVersionUpdateRequest('test-value', 1, UpdatePhpCliVersionRequestPhpVersion::cases()[0]);
 
     expect($response)->toBeObject();
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersPhpVersionsConfigsCliShowRequest method', function () {
+it('can call organizationsServersPhpVersionsConfigsCliShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -336,7 +336,7 @@ it('can call organizationsServersPhpVersionsConfigsCliShowRequest method', funct
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersPhpVersionsConfigsCliUpdateRequest method', function () {
+it('can call organizationsServersPhpVersionsConfigsCliUpdateRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -351,7 +351,7 @@ it('can call organizationsServersPhpVersionsConfigsCliUpdateRequest method', fun
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersPhpVersionsConfigsFpmShowRequest method', function () {
+it('can call organizationsServersPhpVersionsConfigsFpmShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -366,7 +366,7 @@ it('can call organizationsServersPhpVersionsConfigsFpmShowRequest method', funct
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersPhpVersionsConfigsFpmUpdateRequest method', function () {
+it('can call organizationsServersPhpVersionsConfigsFpmUpdateRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -381,7 +381,7 @@ it('can call organizationsServersPhpVersionsConfigsFpmUpdateRequest method', fun
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersPhpVersionsConfigsPoolShowRequest method', function () {
+it('can call organizationsServersPhpVersionsConfigsPoolShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -396,7 +396,7 @@ it('can call organizationsServersPhpVersionsConfigsPoolShowRequest method', func
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersPhpVersionsConfigsPoolUpdateRequest method', function () {
+it('can call organizationsServersPhpVersionsConfigsPoolUpdateRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -405,13 +405,13 @@ it('can call organizationsServersPhpVersionsConfigsPoolUpdateRequest method', fu
     $forge->withMockClient($mockClient);
 
     $resource = new Servers($forge);
-    $response = $resource->organizationsServersPhpVersionsConfigsPoolUpdateRequest('test-value', 1, 1, 'test-value', NULL);
+    $response = $resource->organizationsServersPhpVersionsConfigsPoolUpdateRequest('test-value', 1, 1, 'test-value', null);
 
     expect($response)->toBeObject();
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersPhpVersionsDestroyRequest method', function () {
+it('can call organizationsServersPhpVersionsDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -426,7 +426,7 @@ it('can call organizationsServersPhpVersionsDestroyRequest method', function () 
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersPhpVersionsIndexRequest method', function () {
+it('can call organizationsServersPhpVersionsIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -441,7 +441,7 @@ it('can call organizationsServersPhpVersionsIndexRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersPhpVersionsShowRequest method', function () {
+it('can call organizationsServersPhpVersionsShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -456,7 +456,7 @@ it('can call organizationsServersPhpVersionsShowRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersPhpVersionsStoreRequest method', function () {
+it('can call organizationsServersPhpVersionsStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -471,7 +471,7 @@ it('can call organizationsServersPhpVersionsStoreRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersPhpVersionsUpdateRequest method', function () {
+it('can call organizationsServersPhpVersionsUpdateRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -486,7 +486,7 @@ it('can call organizationsServersPhpVersionsUpdateRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersServicesMysqlActionsStoreRequest method', function () {
+it('can call organizationsServersServicesMysqlActionsStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -501,7 +501,7 @@ it('can call organizationsServersServicesMysqlActionsStoreRequest method', funct
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersServicesNginxActionsStoreRequest method', function () {
+it('can call organizationsServersServicesNginxActionsStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -516,7 +516,7 @@ it('can call organizationsServersServicesNginxActionsStoreRequest method', funct
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersServicesPhpActionsStoreRequest method', function () {
+it('can call organizationsServersServicesPhpActionsStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -531,7 +531,7 @@ it('can call organizationsServersServicesPhpActionsStoreRequest method', functio
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersServicesPostgresActionsStoreRequest method', function () {
+it('can call organizationsServersServicesPostgresActionsStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -546,7 +546,7 @@ it('can call organizationsServersServicesPostgresActionsStoreRequest method', fu
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersServicesRedisActionsStoreRequest method', function () {
+it('can call organizationsServersServicesRedisActionsStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -561,7 +561,7 @@ it('can call organizationsServersServicesRedisActionsStoreRequest method', funct
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersServicesSupervisorActionsStoreRequest method', function () {
+it('can call organizationsServersServicesSupervisorActionsStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -576,7 +576,7 @@ it('can call organizationsServersServicesSupervisorActionsStoreRequest method', 
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersShowRequest method', function () {
+it('can call organizationsServersShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -591,7 +591,7 @@ it('can call organizationsServersShowRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersStoreRequest method', function () {
+it('can call organizationsServersStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -606,7 +606,7 @@ it('can call organizationsServersStoreRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsTeamsServersDestroyRequest method', function () {
+it('can call organizationsTeamsServersDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -621,7 +621,7 @@ it('can call organizationsTeamsServersDestroyRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsTeamsServersIndexRequest method', function () {
+it('can call organizationsTeamsServersIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -636,7 +636,7 @@ it('can call organizationsTeamsServersIndexRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsTeamsServersStoreRequest method', function () {
+it('can call organizationsTeamsServersStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);

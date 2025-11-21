@@ -1,11 +1,11 @@
 <?php
 
-use TeamNifty\Forge\Resource\Integrations;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 use TeamNifty\Forge\Forge;
+use TeamNifty\Forge\Resource\Integrations;
 
-it('can call organizationsServersSitesIntegrationsHorizonDestroyRequest method', function () {
+it('can call organizationsServersSitesIntegrationsHorizonDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -20,7 +20,7 @@ it('can call organizationsServersSitesIntegrationsHorizonDestroyRequest method',
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesIntegrationsHorizonShowRequest method', function () {
+it('can call organizationsServersSitesIntegrationsHorizonShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -35,7 +35,7 @@ it('can call organizationsServersSitesIntegrationsHorizonShowRequest method', fu
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesIntegrationsHorizonStoreRequest method', function () {
+it('can call organizationsServersSitesIntegrationsHorizonStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -50,7 +50,7 @@ it('can call organizationsServersSitesIntegrationsHorizonStoreRequest method', f
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesIntegrationsInertiaShowRequest method', function () {
+it('can call organizationsServersSitesIntegrationsInertiaShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -65,7 +65,7 @@ it('can call organizationsServersSitesIntegrationsInertiaShowRequest method', fu
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesIntegrationsInertiaStoreRequest method', function () {
+it('can call organizationsServersSitesIntegrationsInertiaStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -80,7 +80,7 @@ it('can call organizationsServersSitesIntegrationsInertiaStoreRequest method', f
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesIntegrationsLaravelMaintenanceDestroyRequest method', function () {
+it('can call organizationsServersSitesIntegrationsLaravelMaintenanceDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -95,7 +95,7 @@ it('can call organizationsServersSitesIntegrationsLaravelMaintenanceDestroyReque
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesIntegrationsLaravelMaintenanceShowRequest method', function () {
+it('can call organizationsServersSitesIntegrationsLaravelMaintenanceShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -110,7 +110,7 @@ it('can call organizationsServersSitesIntegrationsLaravelMaintenanceShowRequest 
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesIntegrationsLaravelMaintenanceStoreRequest method', function () {
+it('can call organizationsServersSitesIntegrationsLaravelMaintenanceStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -119,13 +119,13 @@ it('can call organizationsServersSitesIntegrationsLaravelMaintenanceStoreRequest
     $forge->withMockClient($mockClient);
 
     $resource = new Integrations($forge);
-    $response = $resource->organizationsServersSitesIntegrationsLaravelMaintenanceStoreRequest('test-value', 1, 1, NULL, NULL);
+    $response = $resource->organizationsServersSitesIntegrationsLaravelMaintenanceStoreRequest('test-value', 1, 1, null, null);
 
     expect($response)->toBeObject();
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesIntegrationsLaravelSchedulerDestroyRequest method', function () {
+it('can call organizationsServersSitesIntegrationsLaravelSchedulerDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -140,7 +140,7 @@ it('can call organizationsServersSitesIntegrationsLaravelSchedulerDestroyRequest
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesIntegrationsLaravelSchedulerShowRequest method', function () {
+it('can call organizationsServersSitesIntegrationsLaravelSchedulerShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -155,7 +155,7 @@ it('can call organizationsServersSitesIntegrationsLaravelSchedulerShowRequest me
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesIntegrationsLaravelSchedulerStoreRequest method', function () {
+it('can call organizationsServersSitesIntegrationsLaravelSchedulerStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -170,7 +170,7 @@ it('can call organizationsServersSitesIntegrationsLaravelSchedulerStoreRequest m
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesIntegrationsOctaneDestroyRequest method', function () {
+it('can call organizationsServersSitesIntegrationsOctaneDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -185,7 +185,7 @@ it('can call organizationsServersSitesIntegrationsOctaneDestroyRequest method', 
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesIntegrationsOctaneShowRequest method', function () {
+it('can call organizationsServersSitesIntegrationsOctaneShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -200,7 +200,7 @@ it('can call organizationsServersSitesIntegrationsOctaneShowRequest method', fun
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesIntegrationsOctaneStoreRequest method', function () {
+it('can call organizationsServersSitesIntegrationsOctaneStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -215,7 +215,7 @@ it('can call organizationsServersSitesIntegrationsOctaneStoreRequest method', fu
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesIntegrationsPulseDestroyRequest method', function () {
+it('can call organizationsServersSitesIntegrationsPulseDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -230,7 +230,7 @@ it('can call organizationsServersSitesIntegrationsPulseDestroyRequest method', f
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesIntegrationsPulseShowRequest method', function () {
+it('can call organizationsServersSitesIntegrationsPulseShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -245,7 +245,7 @@ it('can call organizationsServersSitesIntegrationsPulseShowRequest method', func
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesIntegrationsPulseStoreRequest method', function () {
+it('can call organizationsServersSitesIntegrationsPulseStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -260,7 +260,7 @@ it('can call organizationsServersSitesIntegrationsPulseStoreRequest method', fun
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesIntegrationsReverbDestroyRequest method', function () {
+it('can call organizationsServersSitesIntegrationsReverbDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -275,7 +275,7 @@ it('can call organizationsServersSitesIntegrationsReverbDestroyRequest method', 
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesIntegrationsReverbShowRequest method', function () {
+it('can call organizationsServersSitesIntegrationsReverbShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -290,7 +290,7 @@ it('can call organizationsServersSitesIntegrationsReverbShowRequest method', fun
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesIntegrationsReverbStoreRequest method', function () {
+it('can call organizationsServersSitesIntegrationsReverbStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);

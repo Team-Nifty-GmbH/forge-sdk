@@ -1,12 +1,12 @@
 <?php
 
-use TeamNifty\Forge\Resource\Recipes;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
-use TeamNifty\Forge\Forge;
 use TeamNifty\Forge\Enums\CreateBackgroundProcessRequestUser;
+use TeamNifty\Forge\Forge;
+use TeamNifty\Forge\Resource\Recipes;
 
-it('can call forgeRecipesIndexRequest method', function () {
+it('can call forgeRecipesIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -21,7 +21,7 @@ it('can call forgeRecipesIndexRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call forgeRecipesRunsStoreRequest method', function () {
+it('can call forgeRecipesRunsStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -36,7 +36,7 @@ it('can call forgeRecipesRunsStoreRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call forgeRecipesShowRequest method', function () {
+it('can call forgeRecipesShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -51,7 +51,7 @@ it('can call forgeRecipesShowRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationRecipesStoreRequest method', function () {
+it('can call organizationRecipesStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -60,13 +60,13 @@ it('can call organizationRecipesStoreRequest method', function () {
     $forge->withMockClient($mockClient);
 
     $resource = new Recipes($forge);
-    $response = $resource->organizationRecipesStoreRequest('test-value', 'test-value', TeamNifty\Forge\Enums\CreateBackgroundProcessRequestUser::cases()[0], 'test-value', 'test-value');
+    $response = $resource->organizationRecipesStoreRequest('test-value', 'test-value', CreateBackgroundProcessRequestUser::cases()[0], 'test-value', 'test-value');
 
     expect($response)->toBeObject();
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsRecipesDestroyRequest method', function () {
+it('can call organizationsRecipesDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -81,7 +81,7 @@ it('can call organizationsRecipesDestroyRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsRecipesIndexRequest method', function () {
+it('can call organizationsRecipesIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -96,7 +96,7 @@ it('can call organizationsRecipesIndexRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsRecipesRunsIndexRequest method', function () {
+it('can call organizationsRecipesRunsIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -111,7 +111,7 @@ it('can call organizationsRecipesRunsIndexRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsRecipesRunsShowRequest method', function () {
+it('can call organizationsRecipesRunsShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -126,7 +126,7 @@ it('can call organizationsRecipesRunsShowRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsRecipesRunsStoreRequest method', function () {
+it('can call organizationsRecipesRunsStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -141,7 +141,7 @@ it('can call organizationsRecipesRunsStoreRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsRecipesShowRequest method', function () {
+it('can call organizationsRecipesShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -156,7 +156,7 @@ it('can call organizationsRecipesShowRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsRecipesUpdateRequest method', function () {
+it('can call organizationsRecipesUpdateRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -165,13 +165,13 @@ it('can call organizationsRecipesUpdateRequest method', function () {
     $forge->withMockClient($mockClient);
 
     $resource = new Recipes($forge);
-    $response = $resource->organizationsRecipesUpdateRequest('test-value', 1, 'test-value', TeamNifty\Forge\Enums\CreateBackgroundProcessRequestUser::cases()[0], 'test-value');
+    $response = $resource->organizationsRecipesUpdateRequest('test-value', 1, 'test-value', CreateBackgroundProcessRequestUser::cases()[0], 'test-value');
 
     expect($response)->toBeObject();
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsTeamsRecipesDestroyRequest method', function () {
+it('can call organizationsTeamsRecipesDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -186,7 +186,7 @@ it('can call organizationsTeamsRecipesDestroyRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsTeamsRecipesIndexRequest method', function () {
+it('can call organizationsTeamsRecipesIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -201,7 +201,7 @@ it('can call organizationsTeamsRecipesIndexRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsTeamsRecipesStoreRequest method', function () {
+it('can call organizationsTeamsRecipesStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);

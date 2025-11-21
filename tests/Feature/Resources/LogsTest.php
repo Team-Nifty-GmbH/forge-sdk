@@ -1,11 +1,11 @@
 <?php
 
-use TeamNifty\Forge\Resource\Logs;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 use TeamNifty\Forge\Forge;
+use TeamNifty\Forge\Resource\Logs;
 
-it('can call organizationsServersLogsDestroyRequest method', function () {
+it('can call organizationsServersLogsDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -20,7 +20,7 @@ it('can call organizationsServersLogsDestroyRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersLogsShowRequest method', function () {
+it('can call organizationsServersLogsShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);

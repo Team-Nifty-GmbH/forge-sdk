@@ -1,11 +1,11 @@
 <?php
 
-use TeamNifty\Forge\Resource\User;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 use TeamNifty\Forge\Forge;
+use TeamNifty\Forge\Resource\User;
 
-it('can call meRequest method', function () {
+it('can call meRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);

@@ -5,16 +5,13 @@
  * to achieve 100% test coverage.
  */
 
-require __dir__ . '/vendor/autoload.php';
-
-use Saloon\Http\Faking\MockClient;
-use Saloon\Http\Faking\MockResponse;
+require __DIR__ . '/vendor/autoload.php';
 
 $resourceDir = __DIR__ . '/src/Resource';
 $testsDir = __DIR__ . '/tests/Feature/Resources';
 
 // Create tests directory if it doesn't exist
-if (!is_dir($testsDir)) {
+if (! is_dir($testsDir)) {
     mkdir($testsDir, 0755, true);
 }
 
@@ -25,8 +22,9 @@ foreach ($files as $file) {
     $className = basename($file, '.php');
     $fqcn = "TeamNifty\\Forge\\Resource\\$className";
 
-    if (!class_exists($fqcn)) {
+    if (! class_exists($fqcn)) {
         echo "Skipping $fqcn - class not found\n";
+
         continue;
     }
 
@@ -34,13 +32,14 @@ foreach ($files as $file) {
     $methods = $reflection->getMethods(ReflectionMethod::IS_PUBLIC);
 
     // Filter to only include methods that end with "Request"
-    $requestMethods = array_filter($methods, function($method) use ($reflection) {
+    $requestMethods = array_filter($methods, function ($method) use ($reflection) {
         return str_ends_with($method->getName(), 'Request') &&
                $method->getDeclaringClass()->getName() === $reflection->getName();
     });
 
     if (empty($requestMethods)) {
         echo "Skipping $fqcn - no request methods found\n";
+
         continue;
     }
 
@@ -58,9 +57,9 @@ function generateResourceTestContent(string $className, string $fqcn, array $met
 {
     $useStatements = [
         "use $fqcn;",
-        "use Saloon\\Http\\Faking\\MockClient;",
-        "use Saloon\\Http\\Faking\\MockResponse;",
-        "use TeamNifty\\Forge\\Forge;",
+        'use Saloon\\Http\\Faking\\MockClient;',
+        'use Saloon\\Http\\Faking\\MockResponse;',
+        'use TeamNifty\\Forge\\Forge;',
     ];
 
     $tests = [];
@@ -89,7 +88,7 @@ function generateResourceTestContent(string $className, string $fqcn, array $met
                 }
             }
 
-            $value = match(true) {
+            $value = match (true) {
                 $typeName === 'string' => "'test-value'",
                 $typeName === 'int' => '1',
                 $typeName === 'bool' => 'true',
@@ -110,20 +109,20 @@ function generateResourceTestContent(string $className, string $fqcn, array $met
         $paramsString = implode(', ', $paramValues);
 
         $tests[] = "it('can call $methodName method', function () {";
-        $tests[] = "    \$mockClient = new MockClient([";
+        $tests[] = '    $mockClient = new MockClient([';
         $tests[] = "        MockResponse::make(['data' => []], 200),";
-        $tests[] = "    ]);";
-        $tests[] = "";
+        $tests[] = '    ]);';
+        $tests[] = '';
         $tests[] = "    \$forge = new Forge(bearerToken: 'test-token');";
-        $tests[] = "    \$forge->withMockClient(\$mockClient);";
-        $tests[] = "";
+        $tests[] = '    $forge->withMockClient($mockClient);';
+        $tests[] = '';
         $tests[] = "    \$resource = new $className(\$forge);";
         $tests[] = "    \$response = \$resource->$methodName($paramsString);";
-        $tests[] = "";
-        $tests[] = "    expect(\$response)->toBeObject();";
-        $tests[] = "    \$mockClient->assertSentCount(1);";
-        $tests[] = "});";
-        $tests[] = "";
+        $tests[] = '';
+        $tests[] = '    expect($response)->toBeObject();';
+        $tests[] = '    $mockClient->assertSentCount(1);';
+        $tests[] = '});';
+        $tests[] = '';
     }
 
     $useStatements = array_unique($useStatements);

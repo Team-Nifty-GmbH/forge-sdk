@@ -5,10 +5,10 @@ use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 use Saloon\PaginationPlugin\Paginator;
 use TeamNifty\Forge\Forge;
-use TeamNifty\Forge\Requests\User\MeRequest;
 use TeamNifty\Forge\Requests\Servers\OrganizationsServersIndexRequest;
+use TeamNifty\Forge\Requests\User\MeRequest;
 
-beforeEach(function () {
+beforeEach(function (): void {
     // Bind Forge instance to container for CanBeSent trait
     app()->singleton(Forge::class, function () {
         $mockClient = new MockClient([
@@ -24,7 +24,7 @@ beforeEach(function () {
     });
 });
 
-it('can call collect method on request', function () {
+it('can call collect method on request', function (): void {
     $request = new MeRequest();
     $collection = $request->collect('data.user');
 
@@ -32,7 +32,7 @@ it('can call collect method on request', function () {
         ->and($collection->toArray())->toHaveKey('id');
 });
 
-it('can call json method on request', function () {
+it('can call json method on request', function (): void {
     $request = new MeRequest();
     $json = $request->json();
 
@@ -40,14 +40,14 @@ it('can call json method on request', function () {
         ->and($json)->toHaveKey('data');
 });
 
-it('can call paginate method on paginated request', function () {
+it('can call paginate method on paginated request', function (): void {
     $request = new OrganizationsServersIndexRequest(organization: 'test-org');
     $paginator = $request->paginate();
 
     expect($paginator)->toBeInstanceOf(Paginator::class);
 });
 
-it('can call send method on request', function () {
+it('can call send method on request', function (): void {
     $request = new MeRequest();
     $response = $request->send();
 

@@ -1,28 +1,28 @@
 <?php
 
-use TeamNifty\Forge\Requests\Databases\OrganizationsServersDatabaseSchemasStoreRequest;
 use Saloon\Enums\Method;
+use TeamNifty\Forge\Requests\Databases\OrganizationsServersDatabaseSchemasStoreRequest;
 
-it('can be instantiated', function () {
-    $request = new OrganizationsServersDatabaseSchemasStoreRequest(organization: 'test-value', server: 1, name: 'test-value', user: NULL, password: NULL);
+it('can be instantiated', function (): void {
+    $request = new OrganizationsServersDatabaseSchemasStoreRequest(organization: 'test-value', server: 1, name: 'test-value', user: null, password: null);
 
     expect($request)->toBeInstanceOf(OrganizationsServersDatabaseSchemasStoreRequest::class);
 });
 
-it('has correct HTTP method', function () {
-    $request = new OrganizationsServersDatabaseSchemasStoreRequest(organization: 'test-value', server: 1, name: 'test-value', user: NULL, password: NULL);
+it('has correct HTTP method', function (): void {
+    $request = new OrganizationsServersDatabaseSchemasStoreRequest(organization: 'test-value', server: 1, name: 'test-value', user: null, password: null);
 
     expect($request->getMethod())->toBe(Method::POST);
 });
 
-it('resolves endpoint correctly', function () {
-    $request = new OrganizationsServersDatabaseSchemasStoreRequest(organization: 'test-value', server: 1, name: 'test-value', user: NULL, password: NULL);
+it('resolves endpoint correctly', function (): void {
+    $request = new OrganizationsServersDatabaseSchemasStoreRequest(organization: 'test-value', server: 1, name: 'test-value', user: null, password: null);
 
     expect($request->resolveEndpoint())->toBeString();
 });
 
-it('has correct body structure', function () {
-    $request = new OrganizationsServersDatabaseSchemasStoreRequest(organization: 'test-value', server: 1, name: 'test-value', user: NULL, password: NULL);
+it('has correct body structure', function (): void {
+    $request = new OrganizationsServersDatabaseSchemasStoreRequest(organization: 'test-value', server: 1, name: 'test-value', user: null, password: null);
 
     expect($request->body()->all())->toBeArray();
 });

@@ -1,11 +1,11 @@
 <?php
 
-use TeamNifty\Forge\Resource\Nginx;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 use TeamNifty\Forge\Forge;
+use TeamNifty\Forge\Resource\Nginx;
 
-it('can call organizationsServersNginxTemplatesDestroyRequest method', function () {
+it('can call organizationsServersNginxTemplatesDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -20,7 +20,7 @@ it('can call organizationsServersNginxTemplatesDestroyRequest method', function 
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersNginxTemplatesIndexRequest method', function () {
+it('can call organizationsServersNginxTemplatesIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -35,7 +35,7 @@ it('can call organizationsServersNginxTemplatesIndexRequest method', function ()
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersNginxTemplatesShowRequest method', function () {
+it('can call organizationsServersNginxTemplatesShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -50,7 +50,7 @@ it('can call organizationsServersNginxTemplatesShowRequest method', function () 
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersNginxTemplatesStoreRequest method', function () {
+it('can call organizationsServersNginxTemplatesStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -65,7 +65,7 @@ it('can call organizationsServersNginxTemplatesStoreRequest method', function ()
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersNginxTemplatesUpdateRequest method', function () {
+it('can call organizationsServersNginxTemplatesUpdateRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);

@@ -1,11 +1,11 @@
 <?php
 
-use TeamNifty\Forge\Resource\RedirectRules;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 use TeamNifty\Forge\Forge;
+use TeamNifty\Forge\Resource\RedirectRules;
 
-it('can call organizationsServersSitesRedirectRulesDestroyRequest method', function () {
+it('can call organizationsServersSitesRedirectRulesDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -20,7 +20,7 @@ it('can call organizationsServersSitesRedirectRulesDestroyRequest method', funct
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesRedirectRulesIndexRequest method', function () {
+it('can call organizationsServersSitesRedirectRulesIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -35,7 +35,7 @@ it('can call organizationsServersSitesRedirectRulesIndexRequest method', functio
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesRedirectRulesShowRequest method', function () {
+it('can call organizationsServersSitesRedirectRulesShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -50,7 +50,7 @@ it('can call organizationsServersSitesRedirectRulesShowRequest method', function
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesRedirectRulesStoreRequest method', function () {
+it('can call organizationsServersSitesRedirectRulesStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);

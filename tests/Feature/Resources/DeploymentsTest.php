@@ -1,11 +1,11 @@
 <?php
 
-use TeamNifty\Forge\Resource\Deployments;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 use TeamNifty\Forge\Forge;
+use TeamNifty\Forge\Resource\Deployments;
 
-it('can call organizationsServersSitesDeploymentsDeployHookShowRequest method', function () {
+it('can call organizationsServersSitesDeploymentsDeployHookShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -20,7 +20,7 @@ it('can call organizationsServersSitesDeploymentsDeployHookShowRequest method', 
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesDeploymentsDeployHookUpdateRequest method', function () {
+it('can call organizationsServersSitesDeploymentsDeployHookUpdateRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -35,7 +35,7 @@ it('can call organizationsServersSitesDeploymentsDeployHookUpdateRequest method'
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesDeploymentsIndexRequest method', function () {
+it('can call organizationsServersSitesDeploymentsIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -50,7 +50,7 @@ it('can call organizationsServersSitesDeploymentsIndexRequest method', function 
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesDeploymentsLogShowRequest method', function () {
+it('can call organizationsServersSitesDeploymentsLogShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -65,7 +65,7 @@ it('can call organizationsServersSitesDeploymentsLogShowRequest method', functio
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesDeploymentsPushToDeployDestroyRequest method', function () {
+it('can call organizationsServersSitesDeploymentsPushToDeployDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -80,7 +80,7 @@ it('can call organizationsServersSitesDeploymentsPushToDeployDestroyRequest meth
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesDeploymentsPushToDeployStoreRequest method', function () {
+it('can call organizationsServersSitesDeploymentsPushToDeployStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -95,7 +95,7 @@ it('can call organizationsServersSitesDeploymentsPushToDeployStoreRequest method
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesDeploymentsScriptShowRequest method', function () {
+it('can call organizationsServersSitesDeploymentsScriptShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -110,7 +110,7 @@ it('can call organizationsServersSitesDeploymentsScriptShowRequest method', func
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesDeploymentsScriptUpdateRequest method', function () {
+it('can call organizationsServersSitesDeploymentsScriptUpdateRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -119,13 +119,13 @@ it('can call organizationsServersSitesDeploymentsScriptUpdateRequest method', fu
     $forge->withMockClient($mockClient);
 
     $resource = new Deployments($forge);
-    $response = $resource->organizationsServersSitesDeploymentsScriptUpdateRequest('test-value', 1, 1, 'test-value', NULL);
+    $response = $resource->organizationsServersSitesDeploymentsScriptUpdateRequest('test-value', 1, 1, 'test-value', null);
 
     expect($response)->toBeObject();
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesDeploymentsShowRequest method', function () {
+it('can call organizationsServersSitesDeploymentsShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -140,7 +140,7 @@ it('can call organizationsServersSitesDeploymentsShowRequest method', function (
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesDeploymentsStatusDestroyRequest method', function () {
+it('can call organizationsServersSitesDeploymentsStatusDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -155,7 +155,7 @@ it('can call organizationsServersSitesDeploymentsStatusDestroyRequest method', f
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesDeploymentsStatusShowRequest method', function () {
+it('can call organizationsServersSitesDeploymentsStatusShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -170,7 +170,7 @@ it('can call organizationsServersSitesDeploymentsStatusShowRequest method', func
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesDeploymentsStoreRequest method', function () {
+it('can call organizationsServersSitesDeploymentsStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -185,7 +185,7 @@ it('can call organizationsServersSitesDeploymentsStoreRequest method', function 
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesWebhooksDestroyRequest method', function () {
+it('can call organizationsServersSitesWebhooksDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -200,7 +200,7 @@ it('can call organizationsServersSitesWebhooksDestroyRequest method', function (
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesWebhooksIndexRequest method', function () {
+it('can call organizationsServersSitesWebhooksIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -215,7 +215,7 @@ it('can call organizationsServersSitesWebhooksIndexRequest method', function () 
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesWebhooksShowRequest method', function () {
+it('can call organizationsServersSitesWebhooksShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -230,7 +230,7 @@ it('can call organizationsServersSitesWebhooksShowRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesWebhooksStoreRequest method', function () {
+it('can call organizationsServersSitesWebhooksStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);

@@ -1,11 +1,11 @@
 <?php
 
-use TeamNifty\Forge\Resource\ScheduledJobs;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 use TeamNifty\Forge\Forge;
+use TeamNifty\Forge\Resource\ScheduledJobs;
 
-it('can call organizationsServersScheduledJobsDestroyRequest method', function () {
+it('can call organizationsServersScheduledJobsDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -20,7 +20,7 @@ it('can call organizationsServersScheduledJobsDestroyRequest method', function (
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersScheduledJobsIndexRequest method', function () {
+it('can call organizationsServersScheduledJobsIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -35,7 +35,7 @@ it('can call organizationsServersScheduledJobsIndexRequest method', function () 
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersScheduledJobsOutputsShowRequest method', function () {
+it('can call organizationsServersScheduledJobsOutputsShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -50,7 +50,7 @@ it('can call organizationsServersScheduledJobsOutputsShowRequest method', functi
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersScheduledJobsShowRequest method', function () {
+it('can call organizationsServersScheduledJobsShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -65,7 +65,7 @@ it('can call organizationsServersScheduledJobsShowRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersScheduledJobsStoreRequest method', function () {
+it('can call organizationsServersScheduledJobsStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -74,7 +74,7 @@ it('can call organizationsServersScheduledJobsStoreRequest method', function () 
     $forge->withMockClient($mockClient);
 
     $resource = new ScheduledJobs($forge);
-    $response = $resource->organizationsServersScheduledJobsStoreRequest('test-value', 1, 'test-value', 'test-value', NULL, NULL, NULL, 'test-value');
+    $response = $resource->organizationsServersScheduledJobsStoreRequest('test-value', 1, 'test-value', 'test-value', null, null, null, 'test-value');
 
     expect($response)->toBeObject();
     $mockClient->assertSentCount(1);

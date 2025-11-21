@@ -1,6 +1,5 @@
 <?php
 
-use Saloon\Config;
 use Saloon\Http\Faking\MockClient;
 
 /*
@@ -14,7 +13,7 @@ use Saloon\Http\Faking\MockClient;
 |
 */
 
-uses()->beforeEach(function () {
+uses()->beforeEach(function (): void {
     // Destroy any existing global MockClient before each test
     MockClient::destroyGlobal();
 })->in('Unit', 'Feature');
@@ -45,7 +44,7 @@ expect()->extend('toBeOne', function () {
 |
 */
 
-function something()
+function something(): void
 {
     // ..
 }

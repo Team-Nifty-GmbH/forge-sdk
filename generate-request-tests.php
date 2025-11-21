@@ -14,7 +14,7 @@ $requestsDir = __DIR__ . '/src/Requests';
 $testsDir = __DIR__ . '/tests/Feature/Requests';
 
 // Create tests directory if it doesn't exist
-if (!is_dir($testsDir)) {
+if (! is_dir($testsDir)) {
     mkdir($testsDir, 0755, true);
 }
 
@@ -25,7 +25,7 @@ foreach ($subdirs as $subdir) {
     $category = basename($subdir);
     $categoryTestDir = $testsDir . '/' . $category;
 
-    if (!is_dir($categoryTestDir)) {
+    if (! is_dir($categoryTestDir)) {
         mkdir($categoryTestDir, 0755, true);
     }
 
@@ -37,20 +37,23 @@ foreach ($subdirs as $subdir) {
         $fqcn = "TeamNifty\\Forge\\Requests\\$category\\$className";
 
         try {
-            if (!class_exists($fqcn)) {
+            if (! class_exists($fqcn)) {
                 echo "Skipping $fqcn - class not found\n";
+
                 continue;
             }
-        } catch (\Throwable $e) {
+        } catch (Throwable $e) {
             echo "Skipping $fqcn - error loading class: {$e->getMessage()}\n";
+
             continue;
         }
 
         $reflection = new ReflectionClass($fqcn);
         $constructor = $reflection->getConstructor();
 
-        if (!$constructor) {
+        if (! $constructor) {
             echo "Skipping $fqcn - no constructor\n";
+
             continue;
         }
 
@@ -82,7 +85,7 @@ foreach ($subdirs as $subdir) {
             }
 
             // Generate appropriate test values based on parameter type
-            $value = match(true) {
+            $value = match (true) {
                 $typeName === 'string' => "'test-value'",
                 $typeName === 'int' => '1',
                 $typeName === 'bool' => 'true',
@@ -102,10 +105,11 @@ foreach ($subdirs as $subdir) {
         // Get HTTP method
         $instance = null;
         try {
-            $mockValues = array_map(fn($v) => eval("return $v;"), $paramValues);
+            $mockValues = array_map(fn ($v) => eval("return $v;"), $paramValues);
             $instance = $reflection->newInstanceArgs($mockValues);
-        } catch (\Throwable $e) {
+        } catch (Throwable $e) {
             echo "Could not instantiate $fqcn: {$e->getMessage()}\n";
+
             continue;
         }
 
@@ -140,7 +144,7 @@ function generateTestContent(string $className, string $fqcn, string $category, 
     }
 
     $paramsString = implode(', ', array_map(
-        fn($name, $value) => "$name: $value",
+        fn ($name, $value) => "$name: $value",
         $paramNames,
         $paramValues
     ));
@@ -148,39 +152,39 @@ function generateTestContent(string $className, string $fqcn, string $category, 
     $tests = [
         "it('can be instantiated', function () {",
         "    \$request = new $className($paramsString);",
-        "",
+        '',
         "    expect(\$request)->toBeInstanceOf($className::class);",
-        "});",
-        "",
+        '});',
+        '',
         "it('has correct HTTP method', function () {",
         "    \$request = new $className($paramsString);",
-        "",
+        '',
         "    expect(\$request->getMethod())->toBe(Method::$method);",
-        "});",
-        "",
+        '});',
+        '',
         "it('resolves endpoint correctly', function () {",
         "    \$request = new $className($paramsString);",
-        "",
-        "    expect(\$request->resolveEndpoint())->toBeString();",
-        "});",
+        '',
+        '    expect($request->resolveEndpoint())->toBeString();',
+        '});',
     ];
 
     if (in_array($method, ['POST', 'PUT', 'PATCH'])) {
-        $tests[] = "";
+        $tests[] = '';
         $tests[] = "it('has correct body structure', function () {";
         $tests[] = "    \$request = new $className($paramsString);";
-        $tests[] = "";
-        $tests[] = "    expect(\$request->body()->all())->toBeArray();";
-        $tests[] = "});";
+        $tests[] = '';
+        $tests[] = '    expect($request->body()->all())->toBeArray();';
+        $tests[] = '});';
     }
 
     if ($hasPagination) {
-        $tests[] = "";
+        $tests[] = '';
         $tests[] = "it('implements pagination interface', function () {";
         $tests[] = "    \$request = new $className($paramsString);";
-        $tests[] = "";
-        $tests[] = "    expect(\$request)->toBeInstanceOf(HasPagination::class);";
-        $tests[] = "});";
+        $tests[] = '';
+        $tests[] = '    expect($request)->toBeInstanceOf(HasPagination::class);';
+        $tests[] = '});';
     }
 
     $testsString = implode("\n", $tests);

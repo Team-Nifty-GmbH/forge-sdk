@@ -1,11 +1,11 @@
 <?php
 
-use TeamNifty\Forge\Resource\Monitors;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 use TeamNifty\Forge\Forge;
+use TeamNifty\Forge\Resource\Monitors;
 
-it('can call organizationsServersMonitorsDestroyRequest method', function () {
+it('can call organizationsServersMonitorsDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -20,7 +20,7 @@ it('can call organizationsServersMonitorsDestroyRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersMonitorsIndexRequest method', function () {
+it('can call organizationsServersMonitorsIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -35,7 +35,7 @@ it('can call organizationsServersMonitorsIndexRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersMonitorsShowRequest method', function () {
+it('can call organizationsServersMonitorsShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -50,7 +50,7 @@ it('can call organizationsServersMonitorsShowRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersMonitorsStoreRequest method', function () {
+it('can call organizationsServersMonitorsStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);

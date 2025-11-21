@@ -1,11 +1,11 @@
 <?php
 
-use TeamNifty\Forge\Resource\FirewallRules;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 use TeamNifty\Forge\Forge;
+use TeamNifty\Forge\Resource\FirewallRules;
 
-it('can call organizationsServersFirewallRulesDestroyRequest method', function () {
+it('can call organizationsServersFirewallRulesDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -20,7 +20,7 @@ it('can call organizationsServersFirewallRulesDestroyRequest method', function (
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersFirewallRulesIndexRequest method', function () {
+it('can call organizationsServersFirewallRulesIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -35,7 +35,7 @@ it('can call organizationsServersFirewallRulesIndexRequest method', function () 
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersFirewallRulesShowRequest method', function () {
+it('can call organizationsServersFirewallRulesShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -50,7 +50,7 @@ it('can call organizationsServersFirewallRulesShowRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersFirewallRulesStoreRequest method', function () {
+it('can call organizationsServersFirewallRulesStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -59,7 +59,7 @@ it('can call organizationsServersFirewallRulesStoreRequest method', function () 
     $forge->withMockClient($mockClient);
 
     $resource = new FirewallRules($forge);
-    $response = $resource->organizationsServersFirewallRulesStoreRequest('test-value', 1, 'test-value', NULL, ['test' => 'value']);
+    $response = $resource->organizationsServersFirewallRulesStoreRequest('test-value', 1, 'test-value', null, ['test' => 'value']);
 
     expect($response)->toBeObject();
     $mockClient->assertSentCount(1);

@@ -5,7 +5,7 @@ use Saloon\Http\Faking\MockResponse;
 use TeamNifty\Forge\Forge;
 use TeamNifty\Forge\Requests\Servers\OrganizationsServersIndexRequest;
 
-it('paginates through multiple pages', function () {
+it('paginates through multiple pages', function (): void {
     $mockClient = new MockClient([
         MockResponse::make([
             'data' => [
@@ -67,7 +67,7 @@ it('paginates through multiple pages', function () {
     $mockClient->assertSentCount(2);
 });
 
-it('handles pagination with no next cursor', function () {
+it('handles pagination with no next cursor', function (): void {
     $mockClient = new MockClient([
         MockResponse::make([
             'data' => [
@@ -105,7 +105,7 @@ it('handles pagination with no next cursor', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('handles empty pagination results', function () {
+it('handles empty pagination results', function (): void {
     $mockClient = new MockClient([
         MockResponse::make([
             'data' => [],

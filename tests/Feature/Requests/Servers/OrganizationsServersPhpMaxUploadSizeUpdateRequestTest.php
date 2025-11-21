@@ -1,28 +1,28 @@
 <?php
 
-use TeamNifty\Forge\Requests\Servers\OrganizationsServersPhpMaxUploadSizeUpdateRequest;
 use Saloon\Enums\Method;
+use TeamNifty\Forge\Requests\Servers\OrganizationsServersPhpMaxUploadSizeUpdateRequest;
 
-it('can be instantiated', function () {
-    $request = new OrganizationsServersPhpMaxUploadSizeUpdateRequest(organization: 'test-value', server: 1, maxUploadSize: NULL, maxExecutionTime: NULL, opcache: NULL);
+it('can be instantiated', function (): void {
+    $request = new OrganizationsServersPhpMaxUploadSizeUpdateRequest(organization: 'test-value', server: 1, maxUploadSize: null, maxExecutionTime: null, opcache: null);
 
     expect($request)->toBeInstanceOf(OrganizationsServersPhpMaxUploadSizeUpdateRequest::class);
 });
 
-it('has correct HTTP method', function () {
-    $request = new OrganizationsServersPhpMaxUploadSizeUpdateRequest(organization: 'test-value', server: 1, maxUploadSize: NULL, maxExecutionTime: NULL, opcache: NULL);
+it('has correct HTTP method', function (): void {
+    $request = new OrganizationsServersPhpMaxUploadSizeUpdateRequest(organization: 'test-value', server: 1, maxUploadSize: null, maxExecutionTime: null, opcache: null);
 
     expect($request->getMethod())->toBe(Method::PUT);
 });
 
-it('resolves endpoint correctly', function () {
-    $request = new OrganizationsServersPhpMaxUploadSizeUpdateRequest(organization: 'test-value', server: 1, maxUploadSize: NULL, maxExecutionTime: NULL, opcache: NULL);
+it('resolves endpoint correctly', function (): void {
+    $request = new OrganizationsServersPhpMaxUploadSizeUpdateRequest(organization: 'test-value', server: 1, maxUploadSize: null, maxExecutionTime: null, opcache: null);
 
     expect($request->resolveEndpoint())->toBeString();
 });
 
-it('has correct body structure', function () {
-    $request = new OrganizationsServersPhpMaxUploadSizeUpdateRequest(organization: 'test-value', server: 1, maxUploadSize: NULL, maxExecutionTime: NULL, opcache: NULL);
+it('has correct body structure', function (): void {
+    $request = new OrganizationsServersPhpMaxUploadSizeUpdateRequest(organization: 'test-value', server: 1, maxUploadSize: null, maxExecutionTime: null, opcache: null);
 
     expect($request->body()->all())->toBeArray();
 });

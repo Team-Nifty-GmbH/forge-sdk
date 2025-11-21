@@ -1,11 +1,11 @@
 <?php
 
-use TeamNifty\Forge\Resource\Databases;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 use TeamNifty\Forge\Forge;
+use TeamNifty\Forge\Resource\Databases;
 
-it('can call organizationsServersDatabasePasswordUpdateRequest method', function () {
+it('can call organizationsServersDatabasePasswordUpdateRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -20,7 +20,7 @@ it('can call organizationsServersDatabasePasswordUpdateRequest method', function
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersDatabaseSchemasDestroyRequest method', function () {
+it('can call organizationsServersDatabaseSchemasDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -35,7 +35,7 @@ it('can call organizationsServersDatabaseSchemasDestroyRequest method', function
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersDatabaseSchemasIndexRequest method', function () {
+it('can call organizationsServersDatabaseSchemasIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -50,7 +50,7 @@ it('can call organizationsServersDatabaseSchemasIndexRequest method', function (
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersDatabaseSchemasShowRequest method', function () {
+it('can call organizationsServersDatabaseSchemasShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -65,7 +65,7 @@ it('can call organizationsServersDatabaseSchemasShowRequest method', function ()
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersDatabaseSchemasStoreRequest method', function () {
+it('can call organizationsServersDatabaseSchemasStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -74,13 +74,13 @@ it('can call organizationsServersDatabaseSchemasStoreRequest method', function (
     $forge->withMockClient($mockClient);
 
     $resource = new Databases($forge);
-    $response = $resource->organizationsServersDatabaseSchemasStoreRequest('test-value', 1, 'test-value', NULL, NULL);
+    $response = $resource->organizationsServersDatabaseSchemasStoreRequest('test-value', 1, 'test-value', null, null);
 
     expect($response)->toBeObject();
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersDatabaseSchemasSynchronizationsStoreRequest method', function () {
+it('can call organizationsServersDatabaseSchemasSynchronizationsStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -95,7 +95,7 @@ it('can call organizationsServersDatabaseSchemasSynchronizationsStoreRequest met
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersDatabaseUsersDestroyRequest method', function () {
+it('can call organizationsServersDatabaseUsersDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -110,7 +110,7 @@ it('can call organizationsServersDatabaseUsersDestroyRequest method', function (
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersDatabaseUsersIndexRequest method', function () {
+it('can call organizationsServersDatabaseUsersIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -125,7 +125,7 @@ it('can call organizationsServersDatabaseUsersIndexRequest method', function () 
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersDatabaseUsersShowRequest method', function () {
+it('can call organizationsServersDatabaseUsersShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -140,7 +140,7 @@ it('can call organizationsServersDatabaseUsersShowRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersDatabaseUsersStoreRequest method', function () {
+it('can call organizationsServersDatabaseUsersStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -155,7 +155,7 @@ it('can call organizationsServersDatabaseUsersStoreRequest method', function () 
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersDatabaseUsersUpdateRequest method', function () {
+it('can call organizationsServersDatabaseUsersUpdateRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -164,7 +164,7 @@ it('can call organizationsServersDatabaseUsersUpdateRequest method', function ()
     $forge->withMockClient($mockClient);
 
     $resource = new Databases($forge);
-    $response = $resource->organizationsServersDatabaseUsersUpdateRequest('test-value', 1, 1, NULL, ['test' => 'value']);
+    $response = $resource->organizationsServersDatabaseUsersUpdateRequest('test-value', 1, 1, null, ['test' => 'value']);
 
     expect($response)->toBeObject();
     $mockClient->assertSentCount(1);

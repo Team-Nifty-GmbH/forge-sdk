@@ -1,11 +1,11 @@
 <?php
 
-use TeamNifty\Forge\Resource\Commands;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 use TeamNifty\Forge\Forge;
+use TeamNifty\Forge\Resource\Commands;
 
-it('can call organizationsServersSitesCommandsDestroyRequest method', function () {
+it('can call organizationsServersSitesCommandsDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -20,7 +20,7 @@ it('can call organizationsServersSitesCommandsDestroyRequest method', function (
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesCommandsIndexRequest method', function () {
+it('can call organizationsServersSitesCommandsIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -35,7 +35,7 @@ it('can call organizationsServersSitesCommandsIndexRequest method', function () 
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesCommandsShowRequest method', function () {
+it('can call organizationsServersSitesCommandsShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -50,7 +50,7 @@ it('can call organizationsServersSitesCommandsShowRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSitesCommandsStoreRequest method', function () {
+it('can call organizationsServersSitesCommandsStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);

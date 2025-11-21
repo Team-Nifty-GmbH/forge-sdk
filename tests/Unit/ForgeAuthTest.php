@@ -6,14 +6,14 @@ use Saloon\Http\Faking\MockResponse;
 use TeamNifty\Forge\Forge;
 use TeamNifty\Forge\Requests\Servers\OrganizationsServersIndexRequest;
 
-it('uses bearer token authentication', function () {
+it('uses bearer token authentication', function (): void {
     $forge = new Forge(bearerToken: 'test-token');
     $auth = $forge->defaultAuth();
 
     expect($auth)->toBeInstanceOf(TokenAuthenticator::class);
 });
 
-it('creates OAuth config when OAuth parameters provided', function () {
+it('creates OAuth config when OAuth parameters provided', function (): void {
     $forge = new Forge(
         bearerToken: 'test-token',
         clientId: 'client-id',
@@ -28,7 +28,7 @@ it('creates OAuth config when OAuth parameters provided', function () {
         ->and($config->getTokenEndpoint())->toBe('https://forge.laravel.com/oauth/token');
 });
 
-it('sends requests with bearer token in header', function () {
+it('sends requests with bearer token in header', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -44,7 +44,7 @@ it('sends requests with bearer token in header', function () {
     });
 });
 
-it('builds correct URLs for requests', function () {
+it('builds correct URLs for requests', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);

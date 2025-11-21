@@ -1,11 +1,11 @@
 <?php
 
-use TeamNifty\Forge\Resource\SshKeys;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 use TeamNifty\Forge\Forge;
+use TeamNifty\Forge\Resource\SshKeys;
 
-it('can call organizationsServersKeyShowRequest method', function () {
+it('can call organizationsServersKeyShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -20,7 +20,7 @@ it('can call organizationsServersKeyShowRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersKeyUpdateRequest method', function () {
+it('can call organizationsServersKeyUpdateRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -35,7 +35,7 @@ it('can call organizationsServersKeyUpdateRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSshKeysDestroyRequest method', function () {
+it('can call organizationsServersSshKeysDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -50,7 +50,7 @@ it('can call organizationsServersSshKeysDestroyRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSshKeysIndexRequest method', function () {
+it('can call organizationsServersSshKeysIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -65,7 +65,7 @@ it('can call organizationsServersSshKeysIndexRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSshKeysShowRequest method', function () {
+it('can call organizationsServersSshKeysShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -80,7 +80,7 @@ it('can call organizationsServersSshKeysShowRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersSshKeysStoreRequest method', function () {
+it('can call organizationsServersSshKeysStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -89,7 +89,7 @@ it('can call organizationsServersSshKeysStoreRequest method', function () {
     $forge->withMockClient($mockClient);
 
     $resource = new SshKeys($forge);
-    $response = $resource->organizationsServersSshKeysStoreRequest('test-value', 1, 'test-value', 'test-value', NULL);
+    $response = $resource->organizationsServersSshKeysStoreRequest('test-value', 1, 'test-value', 'test-value', null);
 
     expect($response)->toBeObject();
     $mockClient->assertSentCount(1);

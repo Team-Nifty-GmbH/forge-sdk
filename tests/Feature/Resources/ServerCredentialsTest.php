@@ -1,11 +1,11 @@
 <?php
 
-use TeamNifty\Forge\Resource\ServerCredentials;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 use TeamNifty\Forge\Forge;
+use TeamNifty\Forge\Resource\ServerCredentials;
 
-it('can call organizationsTeamsServerCredentialsDestroyRequest method', function () {
+it('can call organizationsTeamsServerCredentialsDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -20,7 +20,7 @@ it('can call organizationsTeamsServerCredentialsDestroyRequest method', function
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsTeamsServerCredentialsIndexRequest method', function () {
+it('can call organizationsTeamsServerCredentialsIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -35,7 +35,7 @@ it('can call organizationsTeamsServerCredentialsIndexRequest method', function (
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsTeamsServerCredentialsStoreRequest method', function () {
+it('can call organizationsTeamsServerCredentialsStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);

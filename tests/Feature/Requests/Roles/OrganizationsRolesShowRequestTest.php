@@ -1,21 +1,21 @@
 <?php
 
-use TeamNifty\Forge\Requests\Roles\OrganizationsRolesShowRequest;
 use Saloon\Enums\Method;
+use TeamNifty\Forge\Requests\Roles\OrganizationsRolesShowRequest;
 
-it('can be instantiated', function () {
+it('can be instantiated', function (): void {
     $request = new OrganizationsRolesShowRequest(organization: 'test-value', role: 1);
 
     expect($request)->toBeInstanceOf(OrganizationsRolesShowRequest::class);
 });
 
-it('has correct HTTP method', function () {
+it('has correct HTTP method', function (): void {
     $request = new OrganizationsRolesShowRequest(organization: 'test-value', role: 1);
 
     expect($request->getMethod())->toBe(Method::GET);
 });
 
-it('resolves endpoint correctly', function () {
+it('resolves endpoint correctly', function (): void {
     $request = new OrganizationsRolesShowRequest(organization: 'test-value', role: 1);
 
     expect($request->resolveEndpoint())->toBeString();

@@ -1,28 +1,28 @@
 <?php
 
-use TeamNifty\Forge\Requests\Sites\OrganizationsServersSitesUpdateRequest;
 use Saloon\Enums\Method;
+use TeamNifty\Forge\Requests\Sites\OrganizationsServersSitesUpdateRequest;
 
-it('can be instantiated', function () {
-    $request = new OrganizationsServersSitesUpdateRequest(organization: 'test-value', server: 1, site: 1, directory: NULL, pushToDeploy: true, repositoryBranch: NULL);
+it('can be instantiated', function (): void {
+    $request = new OrganizationsServersSitesUpdateRequest(organization: 'test-value', server: 1, site: 1, directory: null, pushToDeploy: true, repositoryBranch: null);
 
     expect($request)->toBeInstanceOf(OrganizationsServersSitesUpdateRequest::class);
 });
 
-it('has correct HTTP method', function () {
-    $request = new OrganizationsServersSitesUpdateRequest(organization: 'test-value', server: 1, site: 1, directory: NULL, pushToDeploy: true, repositoryBranch: NULL);
+it('has correct HTTP method', function (): void {
+    $request = new OrganizationsServersSitesUpdateRequest(organization: 'test-value', server: 1, site: 1, directory: null, pushToDeploy: true, repositoryBranch: null);
 
     expect($request->getMethod())->toBe(Method::PUT);
 });
 
-it('resolves endpoint correctly', function () {
-    $request = new OrganizationsServersSitesUpdateRequest(organization: 'test-value', server: 1, site: 1, directory: NULL, pushToDeploy: true, repositoryBranch: NULL);
+it('resolves endpoint correctly', function (): void {
+    $request = new OrganizationsServersSitesUpdateRequest(organization: 'test-value', server: 1, site: 1, directory: null, pushToDeploy: true, repositoryBranch: null);
 
     expect($request->resolveEndpoint())->toBeString();
 });
 
-it('has correct body structure', function () {
-    $request = new OrganizationsServersSitesUpdateRequest(organization: 'test-value', server: 1, site: 1, directory: NULL, pushToDeploy: true, repositoryBranch: NULL);
+it('has correct body structure', function (): void {
+    $request = new OrganizationsServersSitesUpdateRequest(organization: 'test-value', server: 1, site: 1, directory: null, pushToDeploy: true, repositoryBranch: null);
 
     expect($request->body()->all())->toBeArray();
 });

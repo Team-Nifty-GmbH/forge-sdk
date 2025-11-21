@@ -1,11 +1,11 @@
 <?php
 
-use TeamNifty\Forge\Resource\Roles;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 use TeamNifty\Forge\Forge;
+use TeamNifty\Forge\Resource\Roles;
 
-it('can call organizationsRolesDestroyRequest method', function () {
+it('can call organizationsRolesDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -20,7 +20,7 @@ it('can call organizationsRolesDestroyRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsRolesIndexRequest method', function () {
+it('can call organizationsRolesIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -35,7 +35,7 @@ it('can call organizationsRolesIndexRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsRolesPermissionsIndexRequest method', function () {
+it('can call organizationsRolesPermissionsIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -50,7 +50,7 @@ it('can call organizationsRolesPermissionsIndexRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsRolesShowRequest method', function () {
+it('can call organizationsRolesShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -65,7 +65,7 @@ it('can call organizationsRolesShowRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsRolesStoreRequest method', function () {
+it('can call organizationsRolesStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -80,7 +80,7 @@ it('can call organizationsRolesStoreRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsRolesUpdateRequest method', function () {
+it('can call organizationsRolesUpdateRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -95,7 +95,7 @@ it('can call organizationsRolesUpdateRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call permissionsIndexRequest method', function () {
+it('can call permissionsIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -110,7 +110,7 @@ it('can call permissionsIndexRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call permissionsShowRequest method', function () {
+it('can call permissionsShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -125,7 +125,7 @@ it('can call permissionsShowRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call predefinedRolesIndexRequest method', function () {
+it('can call predefinedRolesIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -140,7 +140,7 @@ it('can call predefinedRolesIndexRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call predefinedRolesShowRequest method', function () {
+it('can call predefinedRolesShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);

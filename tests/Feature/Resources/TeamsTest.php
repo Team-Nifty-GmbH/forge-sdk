@@ -1,11 +1,11 @@
 <?php
 
-use TeamNifty\Forge\Resource\Teams;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 use TeamNifty\Forge\Forge;
+use TeamNifty\Forge\Resource\Teams;
 
-it('can call organizationsTeamsDestroyRequest method', function () {
+it('can call organizationsTeamsDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -20,7 +20,7 @@ it('can call organizationsTeamsDestroyRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsTeamsIndexRequest method', function () {
+it('can call organizationsTeamsIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -35,7 +35,7 @@ it('can call organizationsTeamsIndexRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsTeamsInvitesDestroyRequest method', function () {
+it('can call organizationsTeamsInvitesDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -50,7 +50,7 @@ it('can call organizationsTeamsInvitesDestroyRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsTeamsInvitesIndexRequest method', function () {
+it('can call organizationsTeamsInvitesIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -65,7 +65,7 @@ it('can call organizationsTeamsInvitesIndexRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsTeamsInvitesShowRequest method', function () {
+it('can call organizationsTeamsInvitesShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -80,7 +80,7 @@ it('can call organizationsTeamsInvitesShowRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsTeamsInvitesStoreRequest method', function () {
+it('can call organizationsTeamsInvitesStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -95,7 +95,7 @@ it('can call organizationsTeamsInvitesStoreRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsTeamsMembersDestroyRequest method', function () {
+it('can call organizationsTeamsMembersDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -110,7 +110,7 @@ it('can call organizationsTeamsMembersDestroyRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsTeamsMembersIndexRequest method', function () {
+it('can call organizationsTeamsMembersIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -125,7 +125,7 @@ it('can call organizationsTeamsMembersIndexRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsTeamsMembersShowRequest method', function () {
+it('can call organizationsTeamsMembersShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -140,7 +140,7 @@ it('can call organizationsTeamsMembersShowRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsTeamsMembersUpdateRequest method', function () {
+it('can call organizationsTeamsMembersUpdateRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -155,7 +155,7 @@ it('can call organizationsTeamsMembersUpdateRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsTeamsShowRequest method', function () {
+it('can call organizationsTeamsShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -170,7 +170,7 @@ it('can call organizationsTeamsShowRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsTeamsStoreRequest method', function () {
+it('can call organizationsTeamsStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -185,7 +185,7 @@ it('can call organizationsTeamsStoreRequest method', function () {
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsTeamsUpdateRequest method', function () {
+it('can call organizationsTeamsUpdateRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);

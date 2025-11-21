@@ -1,12 +1,12 @@
 <?php
 
-use TeamNifty\Forge\Resource\BackgroundProcesses;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
-use TeamNifty\Forge\Forge;
 use TeamNifty\Forge\Enums\CreateBackgroundProcessRequestUser;
+use TeamNifty\Forge\Forge;
+use TeamNifty\Forge\Resource\BackgroundProcesses;
 
-it('can call organizationsServersBackgroundProcessesDestroyRequest method', function () {
+it('can call organizationsServersBackgroundProcessesDestroyRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -21,7 +21,7 @@ it('can call organizationsServersBackgroundProcessesDestroyRequest method', func
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersBackgroundProcessesIndexRequest method', function () {
+it('can call organizationsServersBackgroundProcessesIndexRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -36,7 +36,7 @@ it('can call organizationsServersBackgroundProcessesIndexRequest method', functi
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersBackgroundProcessesLogShowRequest method', function () {
+it('can call organizationsServersBackgroundProcessesLogShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -51,7 +51,7 @@ it('can call organizationsServersBackgroundProcessesLogShowRequest method', func
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersBackgroundProcessesShowRequest method', function () {
+it('can call organizationsServersBackgroundProcessesShowRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -66,7 +66,7 @@ it('can call organizationsServersBackgroundProcessesShowRequest method', functio
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersBackgroundProcessesStoreRequest method', function () {
+it('can call organizationsServersBackgroundProcessesStoreRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
@@ -75,13 +75,13 @@ it('can call organizationsServersBackgroundProcessesStoreRequest method', functi
     $forge->withMockClient($mockClient);
 
     $resource = new BackgroundProcesses($forge);
-    $response = $resource->organizationsServersBackgroundProcessesStoreRequest('test-value', 1, 'test-value', 'test-value', TeamNifty\Forge\Enums\CreateBackgroundProcessRequestUser::cases()[0], 1, NULL, 1, 1, NULL);
+    $response = $resource->organizationsServersBackgroundProcessesStoreRequest('test-value', 1, 'test-value', 'test-value', CreateBackgroundProcessRequestUser::cases()[0], 1, null, 1, 1, null);
 
     expect($response)->toBeObject();
     $mockClient->assertSentCount(1);
 });
 
-it('can call organizationsServersBackgroundProcessesUpdateRequest method', function () {
+it('can call organizationsServersBackgroundProcessesUpdateRequest method', function (): void {
     $mockClient = new MockClient([
         MockResponse::make(['data' => []], 200),
     ]);
