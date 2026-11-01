@@ -55,7 +55,7 @@ it('paginates through multiple pages', function (): void {
     $paginator = $forge->paginate($request);
 
     $allItems = [];
-    foreach ($paginator as $item) {
+    foreach ($paginator->items() as $item) {
         $allItems[] = $item;
     }
 
@@ -97,7 +97,7 @@ it('handles pagination with no next cursor', function (): void {
     $paginator = $forge->paginate($request);
 
     $allItems = [];
-    foreach ($paginator as $item) {
+    foreach ($paginator->items() as $item) {
         $allItems[] = $item;
     }
 
@@ -133,7 +133,7 @@ it('handles empty pagination results', function (): void {
     $paginator = $forge->paginate($request);
 
     $allItems = [];
-    foreach ($paginator as $item) {
+    foreach ($paginator->items() as $item) {
         $allItems[] = $item;
     }
 

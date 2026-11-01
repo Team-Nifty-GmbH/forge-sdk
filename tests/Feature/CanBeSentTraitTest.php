@@ -6,7 +6,6 @@ use Saloon\Http\Faking\MockResponse;
 use Saloon\PaginationPlugin\Paginator;
 use TeamNifty\Forge\Forge;
 use TeamNifty\Forge\Requests\Servers\OrganizationsServersIndexRequest;
-use TeamNifty\Forge\Requests\User\MeRequest;
 
 beforeEach(function (): void {
     // Bind Forge instance to container for CanBeSent trait
@@ -25,7 +24,7 @@ beforeEach(function (): void {
 });
 
 it('can call collect method on request', function (): void {
-    $request = new MeRequest();
+    $request = new OrganizationsServersIndexRequest(organization: 'test-org');
     $collection = $request->collect('data.user');
 
     expect($collection)->toBeInstanceOf(Collection::class)
@@ -33,7 +32,7 @@ it('can call collect method on request', function (): void {
 });
 
 it('can call json method on request', function (): void {
-    $request = new MeRequest();
+    $request = new OrganizationsServersIndexRequest(organization: 'test-org');
     $json = $request->json();
 
     expect($json)->toBeArray()
@@ -48,7 +47,7 @@ it('can call paginate method on paginated request', function (): void {
 });
 
 it('can call send method on request', function (): void {
-    $request = new MeRequest();
+    $request = new OrganizationsServersIndexRequest(organization: 'test-org');
     $response = $request->send();
 
     expect($response)->toBeObject()
