@@ -44,7 +44,29 @@ expect()->extend('toBeOne', function () {
 |
 */
 
-function something(): void
+function makeWithDummyArguments(string $class): object
 {
-    // ..
+    $reflection = new ReflectionClass($class);
+    $arguments = [];
+
+    foreach ($reflection->getConstructor()?->getParameters() ?? [] as $parameter) {
+        if ($parameter->isOptional()) {
+            continue;
+        }
+
+        $type = $parameter->getType();
+
+        $arguments[$parameter->getName()] = match (true) {
+            $type === null, $type->allowsNull() => null,
+            $type instanceof ReflectionUnionType => 'test-value',
+            $type->getName() === 'string' => 'test-value',
+            $type->getName() === 'int' => 1,
+            $type->getName() === 'float' => 1.0,
+            $type->getName() === 'bool' => true,
+            $type->getName() === 'array' => [],
+            default => (new ReflectionClass($type->getName()))->newInstanceWithoutConstructor(),
+        };
+    }
+
+    return $reflection->newInstanceArgs($arguments);
 }

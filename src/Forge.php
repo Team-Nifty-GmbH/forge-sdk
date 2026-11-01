@@ -198,7 +198,7 @@ class Forge extends Connector implements HasPagination
                 return $response->json('data') ?? [];
             }
 
-            protected function getNextCursor(Response $response): ?string
+            protected function getNextCursor(Response $response): int|string
             {
                 return $response->json('meta.cursor.next');
             }
@@ -206,11 +206,7 @@ class Forge extends Connector implements HasPagination
             protected function applyPagination(Request $request): Request
             {
                 if ($this->currentResponse instanceof Response) {
-                    $cursor = $this->getNextCursor($this->currentResponse);
-
-                    if ($cursor !== null) {
-                        $request->query()->add('page[cursor]', $cursor);
-                    }
+                    $request->query()->add('page[cursor]', $this->getNextCursor($this->currentResponse));
                 }
 
                 return $request;
