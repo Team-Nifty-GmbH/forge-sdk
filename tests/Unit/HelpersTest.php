@@ -24,3 +24,9 @@ it('forge helper resolves from container when no token provided', function (): v
 
     expect($forge)->toBeInstanceOf(Forge::class);
 });
+
+it('does not redeclare the forge helper when loaded twice', function (): void {
+    require __DIR__ . '/../../src/helpers.php';
+
+    expect(function_exists('forge'))->toBeTrue();
+});
